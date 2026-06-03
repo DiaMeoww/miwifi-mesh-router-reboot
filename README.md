@@ -42,6 +42,8 @@ SCHEDULE_MINUTE = 59
 MIWIFI_USE_PROXY = False
 ```
 
+只需要修改“用户配置区”里的内容，下面的程序逻辑不需要修改。
+
 需要修改的内容：
 
 - `MIWIFI_PASSWORD`：改成你的路由器管理密码。

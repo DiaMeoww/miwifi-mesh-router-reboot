@@ -47,8 +47,6 @@ SCHEDULE_MINUTE = 59
 MIWIFI_USE_PROXY = False
 # ================== 用户配置区结束 ==================
 
-PASSWORD_PLACEHOLDER = "请在这里填写路由器管理密码"
-HOST_PLACEHOLDER = "http://192.168.x.x"
 REQUEST_TIMEOUT_SECONDS = 15
 
 
@@ -221,13 +219,13 @@ def read_config(args: argparse.Namespace) -> RouterConfig:
     username = args.username or MIWIFI_USERNAME
     password = args.password or MIWIFI_PASSWORD
 
-    if host == HOST_PLACEHOLDER:
+    if host.endswith(".x.x"):
         raise RuntimeError(
             "缺少路由器登录网址。请先打开脚本，"
             "把用户配置区里的 MIWIFI_HOST 改成你的路由器登录网址，格式为 http://192.168.x.x。"
         )
 
-    if not password or password == PASSWORD_PLACEHOLDER:
+    if not password or "请在这里填写" in password:
         raise RuntimeError(
             "缺少路由器管理密码。请先打开脚本，"
             "把用户配置区里的 MIWIFI_PASSWORD 改成你的路由器管理密码。"
