@@ -1,4 +1,4 @@
-# MiWiFi/Redmi 路由器定时重启脚本使用说明
+# MiWiFi/Redmi 小米路由器定时重启脚本使用说明
 
 这个说明对应同目录下的 `miwifi_weekly_reboot.py`。
 
